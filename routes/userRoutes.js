@@ -13,7 +13,6 @@ import role from "../middleware/role.js";
 
 const router = express.Router();
 
-// Admin + Manager
 router.get(
   "/",
   auth,
@@ -21,7 +20,6 @@ router.get(
   getUsers
 );
 
-// Admin only
 router.post(
   "/",
   auth,
@@ -29,7 +27,6 @@ router.post(
   createUser
 );
 
-// Admin + Manager
 router.get(
   "/:id",
   auth,
@@ -37,7 +34,6 @@ router.get(
   getUser
 );
 
-// Admin only
 router.put(
   "/:id",
   auth,
@@ -45,7 +41,6 @@ router.put(
   updateUser
 );
 
-// Admin only
 router.delete(
   "/:id",
   auth,

@@ -85,8 +85,7 @@ export const createTask = async (req, res) => {
       });
     }
 
-    // If a user is being assigned, make sure they belong
-    // to the same organization.
+    
     if (assignedTo) {
       const assignedUser = await User.findOne({
         _id: assignedTo,

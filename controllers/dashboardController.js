@@ -28,7 +28,6 @@ export const getDashboard = async (req, res) => {
       status: "completed",
     });
 
-    // Employee-specific dashboard information
     let myTasks = null;
 
     if (req.user.role === "employee") {

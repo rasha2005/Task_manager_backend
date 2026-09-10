@@ -7,14 +7,12 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Check if email and password were provided
     if (!email || !password) {
       return res.status(400).json({
         message: "Email and password are required",
       });
     }
 
-    // Find user by email
     const user = await User.findOne({ email });
 
     if (!user) {
@@ -23,14 +21,12 @@ export const login = async (req, res) => {
       });
     }
 
-    // Check if user is active
     if (!user.isActive) {
       return res.status(403).json({
         message: "Your account is inactive",
       });
     }
 
-    // Compare entered password with hashed password
     const isPasswordCorrect = await bcrypt.compare(
       password,
       user.password

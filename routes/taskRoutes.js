@@ -48,7 +48,6 @@ router.post(
   createTask
 );
 
-// Admin + Manager
 router.put(
   "/:id",
   auth,
@@ -56,7 +55,6 @@ router.put(
   updateTask
 );
 
-// Admin only
 router.delete(
   "/:id",
   auth,
@@ -64,7 +62,6 @@ router.delete(
   deleteTask
 );
 
-// Employee
 router.patch(
   "/:id/status",
   auth,
